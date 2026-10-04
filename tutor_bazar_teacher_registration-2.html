@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutor Bazar - Teacher Registration</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f7fb;color:#202124}
+.card{max-width:520px;margin:30px auto;background:#fff;border-radius:18px;padding:28px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.logo{font-size:28px;font-weight:800;text-align:center;color:#3f51b5}.tag{text-align:center;color:#666;margin:6px 0 24px}
+label{display:block;font-weight:600;margin:17px 0 7px}input,select,textarea{width:100%;padding:12px;border:1px solid #d7dbe5;border-radius:9px;font-size:15px;background:#fff}
+textarea{min-height:90px;resize:vertical}.checks label{font-weight:400;margin:8px 0}.checks input{width:auto;margin-right:8px}
+button{width:100%;margin-top:24px;padding:14px;border:0;border-radius:10px;background:#3f51b5;color:#fff;font-size:16px;font-weight:700;cursor:pointer}
+.note{font-size:12px;color:#777;margin-top:12px;line-height:1.5}.success{display:none;text-align:center;padding:25px}
+</style>
+</head>
+<body>
+<div class="card">
+  <div id="formBox">
+    <div class="logo">TUTOR BAZAR</div>
+    <div class="tag">Teacher Registration Form</div>
+
+    <form id="teacherForm">
+      <label>Full Name *</label>
+      <input name="name" required>
+
+      <label>Age *</label>
+      <input name="age" type="number" min="18" max="80" required>
+
+      <label>WhatsApp / Mobile Number *</label>
+      <input name="phone" type="tel" required>
+
+      <label>Current Location / Area *</label>
+      <input name="location" placeholder="Example: Konnagar, Serampore" required>
+
+      <label>Highest Qualification *</label>
+      <input name="qualification" placeholder="Example: B.A., M.A., B.Ed., B.P.Ed." required>
+
+      <label>Subject(s) You Teach *</label>
+      <input name="subjects" placeholder="Example: English, Mathematics" required>
+
+      <label>Classes You Can Teach *</label>
+      <select name="classes" required>
+        <option value="">Select</option>
+        <option>Nursery – Class 5</option>
+        <option>Class 6 – 8</option>
+        <option>Class 9 – 10</option>
+        <option>Class 11 – 12</option>
+        <option>Multiple levels</option>
+      </select>
+
+      <label>Teaching Experience *</label>
+      <select name="experience" required>
+        <option value="">Select</option>
+        <option>Fresher</option>
+        <option>1–2 years</option>
+        <option>3–5 years</option>
+        <option>5+ years</option>
+      </select>
+
+      <label>Upload CV / Qualification Certificate</label>
+      <input name="document" type="file" accept=".pdf,.jpg,.jpeg,.png">
+
+      <div class="note">By submitting, you confirm that the information provided is correct and agree to be contacted by Tutor Bazar regarding tuition opportunities.</div>
+      <button type="submit">Submit Registration</button>
+    </form>
+  </div>
+
+  <div class="success" id="success">
+    <div style="font-size:42px">✓</div>
+    <h2>Registration Submitted!</h2>
+    <p>Thank you for registering with Tutor Bazar. Our team will contact you if a suitable tuition opportunity is available.</p>
+  </div>
+</div>
+
+<script>
+document.getElementById('teacherForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formBox').style.display='none';
+  document.getElementById('success').style.display='block';
+});
+</script>
+</body>
+</html>
